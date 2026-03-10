@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "113843853013",
+    "project_id": "call-monitor-26050",
+    "storage_bucket": "call-monitor-26050.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113843853013:android:169b6035251215aa22745c",
+        "android_client_info": {
+          "package_name": "com.diin.call_monitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113843853013-q6q9st5msua97u7gmj4vivjep6h6ndru.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-jIJqns8TzQi0FGsa7aY45r7uhuWr7BY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113843853013-q6q9st5msua97u7gmj4vivjep6h6ndru.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
