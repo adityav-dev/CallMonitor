@@ -1,8 +1,3 @@
-# ✅ Correct `android/app/build.gradle.kts` (Clean Version)
-
-Isko **exact paste karo (without ``` )**:
-
-:::writing{variant="standard" id="gradfix01"}
 import java.util.Properties
 import java.io.FileInputStream
 
