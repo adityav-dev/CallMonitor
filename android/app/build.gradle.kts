@@ -51,11 +51,8 @@ kotlinOptions {
 }
 
 signingConfigs {
-
     create("release") {
-
         val keystorePropsFile = rootProject.file("key.properties")
-
         if (keystorePropsFile.exists()) {
             val props = Properties()
             props.load(FileInputStream(keystorePropsFile))
