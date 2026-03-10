@@ -19,41 +19,41 @@ class LoginController extends GetxController {
     try {
       isLoading.value = true;
 
-      await _googleSignIn.signOut();
+      // await _googleSignIn.signOut();
 
-      final googleUser = await _googleSignIn.signIn();
-      if (googleUser == null) {
-        _showSnackBar("Cancelled", "You cancelled the sign-in.");
-        return;
-      }
+      // final googleUser = await _googleSignIn.signIn();
+      // if (googleUser == null) {
+      //   _showSnackBar("Cancelled", "You cancelled the sign-in.");
+      //   return;
+      // }
 
-      final googleAuth = await googleUser.authentication;
-      if (googleAuth.idToken == null) {
-        throw Exception("Google token missing");
-      }
+      // final googleAuth = await googleUser.authentication;
+      // if (googleAuth.idToken == null) {
+      //   throw Exception("Google token missing");
+      // }
 
-      // Optional Firebase
-      final credential = GoogleAuthProvider.credential(idToken: googleAuth.idToken);
-      await _auth.signInWithCredential(credential);
+      // // Optional Firebase
+      // final credential = GoogleAuthProvider.credential(idToken: googleAuth.idToken);
+      // await _auth.signInWithCredential(credential);
 
-      // Call backend
-      final loginModel = await apiService.googleLogin(googleAuth.idToken!);
-      print("LogiRese:${loginModel.toJson().toString()}");
+      // // Call backend
+      // final loginModel = await apiService.googleLogin(googleAuth.idToken!);
+      // print("LogiRese:${loginModel.toJson().toString()}");
 
-      if (loginModel.success == true && loginModel.token != null) {
-        await secureStorage.write(key: Constants.token, value: loginModel.token!);
-        await storage.write('userId', loginModel.id);
-        await storage.write('profileId', loginModel.profileId);
-        await storage.write('userType', loginModel.userType);
-        await storage.write('isProfileCompleted', loginModel.isprofileCompleted);
-        await storage.write('isApproved', loginModel.isApproved);
-        await storage.write('email', loginModel.email);
-        await storage.write('name', loginModel.name);
+      // if (loginModel.success == true && loginModel.token != null) {
+      //   await secureStorage.write(key: Constants.token, value: loginModel.token!);
+      //   await storage.write('userId', loginModel.id);
+      //   await storage.write('profileId', loginModel.profileId);
+      //   await storage.write('userType', loginModel.userType);
+      //   await storage.write('isProfileCompleted', loginModel.isprofileCompleted);
+      //   await storage.write('isApproved', loginModel.isApproved);
+      //   await storage.write('email', loginModel.email);
+      //   await storage.write('name', loginModel.name);
 
         Get.offAllNamed(AppRoutes.bottomBarScreen);
-      } else {
-        // throw Exception(loginModel.message ?? "Login failed");
-      }
+      // } else {
+      //   // throw Exception(loginModel.message ?? "Login failed");
+      // }
     } on DioException catch (e) {
        throw Exception(e.toString());
     } catch (e) {
